@@ -1,0 +1,383 @@
+
+body {
+    padding: 0;
+    background: linear-gradient(135deg, #505b7b, #1c2d54);
+    scroll-behavior: smooth;
+}
+nav {
+    position: fixed;
+    width: 80%;
+    background-color: #211212;
+    padding: 20px 0;
+    z-index: 1;
+    border-radius: 7%;
+    top: 10px;
+    left: 50%;
+    z-index:2;
+    transform: translateX(-50%); 
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 30px;
+    justify-items: center;
+    width: 100%;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+}
+nav ul li a:hover {
+    background-color: #ebdbe8ef;
+    color: rgb(5, 52, 113);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-decoration:rgba(25, 25, 236, 0.283)  underline;
+
+}
+section {
+    padding: 100px 20px;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+#home {
+    background-color: #918989;
+    text-align:center;
+}
+#home h1 {
+    
+    font-size: 40px; 
+    color: rgb(189, 28, 3);
+     font-family:initial;
+}
+#home h3{
+    font-size: 30px;
+    color: #e34806;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 
+    typewriter 3.3s steps(1000) infinite,
+    blink-caret 0.75s step-end infinite;
+
+}
+@keyframes typewriter {
+    0%, 100% { width: 0 } 
+    50% { width: 100% } 
+    80% { width: 100% } 
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50%{transform: scale(1.01);}
+    25%,75%{transform: scale(0.99);}
+}
+
+
+
+#about {
+    position: relative;
+    max-width: 100%;
+    background-color: #999393;
+  
+    overflow: hidden;
+}
+
+.aboutp {
+    position: relative;
+    z-index: 1;
+    color: #2c0a2c;
+    font-size: 20px;
+    background-color:#898484;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.aboutp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(to right, #e0c8c875 1px, transparent 1px),
+        linear-gradient(to bottom, #f19797 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.aboutp:hover::before {
+    opacity: 1;
+}
+
+.aboutp::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: 
+        linear-gradient(to right, #f416165a 1px, transparent 1px),
+        linear-gradient(to bottom, #ff6b6b 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+
+.aboutp:hover::after {
+    opacity: 0.3;
+}
+
+#about h1 {
+    text-align: center;
+    color: #781276;
+    margin-bottom: 1.5rem;
+    font-size: xx-large;
+
+}
+
+
+
+#education {
+    background-color: #a29d9d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#education ul {
+    list-style-type: none;
+    padding: 1px;
+}
+
+#education h1 {
+    font-size: 40px;
+    color: rgba(3, 3, 43, 0.938); 
+    font-family: 'Franklin Gothic Medium';
+    font-weight: bolder;
+    box-shadow: 4px rgba(11, 11, 60, 0.237);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+#education li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+/* Staggered animation for list items */
+#education li:nth-child(1) {
+    animation-delay: 0.5s;
+}
+#education li:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#education strong {
+    font-size: 25px;
+    color: rgb(9, 19, 134);
+    display: inline-block;
+}
+
+#education i {
+    font-weight: 550;
+    color: rgb(5, 5, 28);
+    display: inline-block;
+}
+#education li:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+#education li:hover strong {
+    animation: bounce 0.9s;
+}
+
+#education li:hover i {
+    animation: colorShift 0.5s;
+
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes colorShift {
+    0% { color: rgb(5, 5, 28); }
+    50% { color: rgb(9, 19, 134); }
+    100% { color: rgb(5, 5, 28); }
+}
+#skills {
+    background-color: #a8a4a4;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 3;
+}
+
+#skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+#skills h1{
+   color: rgb(65, 93, 10);
+    font-family: cursive; 
+    font-size:38px;
+}
+
+#skill-card {
+    background: #3b3a3a;
+    color: rgb(17, 206, 253);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 17px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow:0 9px 11px rgba(14, 11, 209, 0.7) ;
+}
+
+#skill-card:hover {
+    transform: scale(1.13);
+    background-color: #211212;
+    color:rgba(13, 135, 33, 0.998);
+    box-shadow: 0 11px 12px rgba(4, 68, 12, 0.7);
+    font-size: 19px;
+    font-family:sans-serif;
+}
+
+
+#contact {
+    background-color: #bebaba;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #efb9b9;
+    box-shadow: 0 6px 8px rgba(137, 34, 34, 0.3);
+    font-size: 16px;
+    background-color: #f4f4f4f3;
+    color: #513b0c;
+}
+
+button {
+    background-color: #620b251e;
+    color: rgb(238, 16, 16);
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button:hover {
+    background-color: #621010;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    font-family: Georgia;
+}
+
+#hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #d0caca;
+  }
+  #cardp{
+    font-size: 50px;
+    font-weight: 700;
+    color: #190129;
+  }
+  
+  .card {
+    margin-top: 2px;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden; 
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease;
+    background-color: #d0caca;
+  }
+  .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  
+
+  .gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+  }
+  .card:hover .image {
+    opacity: 0; 
+  }
+  .card:hover .gif {
+    opacity: 1;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); 
+  }
+  
+
+  .gif-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+  }
